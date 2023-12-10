@@ -1,0 +1,31 @@
+import qrcode
+import requests
+
+# Paso 1: Inicia Sesión en la Aplicación (Este paso podría requerir autenticación previa)
+
+# Paso 2: Selecciona Recarga y elige el Tipo de Tarjeta Prepago
+# (En este ejemplo, se asume que la recarga es de $10)
+
+monto_recarga = 10
+
+# Paso 3: Confirma la Recarga
+tarjeta_prepago = "TuNumeroDeTarjetaPrepago"
+
+# Paso 4: Selecciona Pago con Código QR (Si el monto es mayor o igual a cierta cantidad)
+
+if monto_recarga >= 3:
+    # Paso 5: Completa los Datos de Facturación (En este ejemplo, no se requiere)
+
+    # Paso 6: Genera el Código QR
+    datos_transaccion = f"Recarga {tarjeta_prepago} - Monto: ${monto_recarga}"
+    qr = qrcode.make(datos_transaccion)
+
+    # Guarda el código QR como imagen
+    qr.save("codigo_qr_recarga.png")
+
+    # Paso 7: Descarga el Código QR (Este paso es simulado, puede variar según la implementación real)
+    # En este ejemplo, simplemente imprimimos la URL del código QR
+    print("Descarga el código QR de la siguiente URL:")
+    print("https://ejemplo.com/codigo_qr_recarga.png")
+
+# Puedes abrir el código QR generado en tu aplicación bancaria para realizar el pago.
